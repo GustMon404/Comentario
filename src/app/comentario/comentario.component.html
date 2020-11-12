@@ -1,0 +1,10 @@
+<div class="shadow-none p-3 mb-5 bg-light rounded">
+    <div *ngFor =" let comentario of comentarios">
+        <div class="shadow p-4 mb-3 bg-white rounded">
+            <p class="card-text">{{ comentario.comentario }}</p>
+            <hr class="my-0">
+            <i *ngIf = "comentario.like == false; else likeblock" class="fa fa-thumbs-up dir" style = "cursor:pointer" (click) = "like(comentario)"></i>
+            <ng-template #likeblock> <i class="fa fa-thumbs-up dir checked" style = "cursor:pointer" (click) = "like(comentario)"></i> </ng-template>
+        </div>
+    </div>
+</div>

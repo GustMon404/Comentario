@@ -1,0 +1,15 @@
+<div class="card border-dark mb-3" style="max-width: 30rem;">
+    <div class="card-body text-secondary">
+        <form #cadastro="ngForm" (submit)="salvar()">
+            <div class="form-group">
+                <label for="comentario">Comentario</label>
+                <textarea type="text" class="form-control" style="max-width: 30rem;" id="comentario" name="comentario" [(ngModel)] = "comentario"></textarea>
+            </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+        <br>
+        <app-comentario *ngIf="comentarios[0] != null" 
+                        [comentarios] = "comentarios"
+                        (like_comentario) = like($event)></app-comentario>
+    </div>
+</div>
